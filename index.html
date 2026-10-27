@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html
+  lang="es"
+  class="scrollbar-thin scrollbar-thumb-zinc-300 scrollbar-track-transparent dark:scrollbar-thumb-zinc-700"
+>
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/vet.png" />
+    <link rel="icon" type="image/png" href="/vet.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Pacientes React</title> 
+    <meta
+      name="description"
+      content="VetCare: panel para el seguimiento de pacientes veterinarios construido con React, Vite y Tailwind CSS."
+    />
+    <title>VetCare · Seguimiento de pacientes</title>
+    <script>
+      // Aplica el tema antes del primer pintado para evitar parpadeos
+      try {
+        const tema = JSON.parse(localStorage.getItem('tema'))
+        const oscuro =
+          tema === 'dark' ||
+          (!tema && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.classList.toggle('dark', oscuro)
+      } catch {
+        // Sin acceso a localStorage: se usa el tema claro
+      }
+    </script>
   </head>
-  <body class=" bg-grey-50 h-screen overflow-y-scroll md:scrollbar-thin  scrollbar-thumb-indigo-500 scrollbar-track-indigo-300">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
