@@ -1,8 +1,29 @@
+const TECNOLOGIAS = ['React 19', 'Vite 8', 'Tailwind CSS 4']
 
 const Footer = () => (
-    <footer className="bg-gradient-to-r from-blue-500 to-blue-700 block fixed left-0 right-0 bottom-0 p-[0.5rem] border-t-2 border-solid border-grey-500">
-        <h2 className="text-center text-white m-0 font-bold font-sans text-xl">Desarrollado por DevPoint Víctor Tejada</h2>
-    </footer>
+  <footer className="mt-20 border-t border-zinc-200 dark:border-zinc-800">
+    <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-zinc-500 sm:flex-row sm:px-6 lg:px-8 dark:text-zinc-400">
+      <p>
+        Desarrollado por{' '}
+        <span className="font-medium text-zinc-900 dark:text-zinc-100">
+          DevPoint Víctor Tejada
+        </span>
+      </p>
+      <ul
+        className="flex flex-wrap justify-center gap-2"
+        aria-label="Tecnologías"
+      >
+        {TECNOLOGIAS.map((tecnologia) => (
+          <li
+            key={tecnologia}
+            className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium dark:border-zinc-800 dark:bg-zinc-900"
+          >
+            {tecnologia}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </footer>
 )
 
 export default Footer
